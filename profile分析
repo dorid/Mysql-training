@@ -1,0 +1,43 @@
+mysql> select * from MEMBER_BASE_INFO where MSN='324';
+
+
+mysql> show profiles;
++----------+-------------+-------------------------------------------------+
+| Query_ID | Duration    | Query                                           |
++----------+-------------+-------------------------------------------------+
+|        1 |  0.00026400 | SELECT DATABASE()                               |
+|        2 |  0.00051700 | show databases                                  |
+|        3 |  0.00142475 | show tables                                     |
+|        4 |  0.26493925 | desc MEMBER_BASE_INFO                           |
+|        6 | 63.28271825 | select * from MEMBER_BASE_INFO where MSN='324'  |
++----------+-------------+-------------------------------------------------+
+6 rows in set, 1 warning (0.05 sec)
+
+
+mysql> show profile for query 6
+    -> ;
++----------------------+-----------+
+| Status               | Duration  |
++----------------------+-----------+
+| starting             |  0.000053 |
+| checking permissions |  0.000015 |
+| Opening tables       |  0.000024 |
+| init                 |  0.000075 |
+| System lock          |  0.000081 |
+| optimizing           |  0.000020 |
+| statistics           |  0.000065 |
+| preparing            |  0.000021 |
+| executing            |  0.000011 |
+| Sending data         | 63.282059 |
+| end                  |  0.000029 |
+| query end            |  0.000017 |
+| closing tables       |  0.000111 |
+| freeing items        |  0.000048 |
+| logging slow query   |  0.000067 |
+| cleaning up          |  0.000025 |
++----------------------+-----------+
+
+
+
+example:
+http://blog.csdn.net/yunhua_lee/article/details/8573621

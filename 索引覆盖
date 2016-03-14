@@ -1,0 +1,16 @@
+ 
+索引覆盖：
+
+select * from USER_ACTION_201510 limit 5000000, 1;
+
+select PK_ID from USER_ACTION_201510 limit 5000000, 1;
+
+
+主键：
+select * from USER_ACTION_201510 where PK_ID>=(select PK_ID from USER_ACTION_201510 limit 5000000, 1) limit 101;
+
+select * from USER_ACTION_201510  limit 5000000, 101;
+
+
+
+10.25   3307

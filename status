@@ -1,0 +1,6 @@
+mysqladmin -uroot ext|awk 'Queries/{q=$4}/Threads_connected/{c=$4}/Threads_running/{r=$4}END{printf("%d %d %d\n",q,c,r)}'
+
+
+每秒查询数 
+连接数 
+当前正在执行的查询数

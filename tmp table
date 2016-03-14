@@ -1,0 +1,7 @@
+explain select * from SCORE_PRODUCT group by CATEGORY
+
+
+alter table SCORE_PRODUCT add index CATEGORY(CATEGORY);
+
+
+explain select * from SCORE_PRODUCT group by CATEGORY order by 1
